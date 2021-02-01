@@ -1,4 +1,7 @@
+
 import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 import sys
 from pyqode.qt import QtWidgets
 from pyqode.core.widgets import GenericCodeEdit, InteractiveConsole

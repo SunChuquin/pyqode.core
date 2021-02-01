@@ -4,6 +4,9 @@ This example show you how to setup a code completion provider on the backend
 (the provider will be automatically used when the user request a code
 completion).
 """
+import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 from pyqode.core import backend
 
 

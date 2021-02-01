@@ -1,6 +1,9 @@
 """
 This example show you how to use the Terminal widget
 """
+import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 from pyqode.qt import QtWidgets
 
 from pyqode.core.widgets import Terminal

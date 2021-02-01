@@ -8,6 +8,7 @@ from pyqode.qt import QtWidgets, QtCore, QtGui
 from pyqode.qt import PYQT5_API
 from pyqode.qt import PYQT4_API
 from pyqode.qt import PYSIDE_API
+from pyqode.qt import PYSIDE2_API
 
 
 class PromptLineEdit(QtWidgets.QLineEdit):
@@ -67,6 +68,9 @@ class PromptLineEdit(QtWidgets.QLineEdit):
                 option = QStyleOptionFrameV3()
             elif qt_api in PYQT5_API:
                 from PyQt5.QtWidgets import QStyleOptionFrame
+                option = QStyleOptionFrame()
+            elif qt_api in PYSIDE2_API:
+                from PySide2.QtWidgets import QStyleOptionFrame
                 option = QStyleOptionFrame()
             else:
                 msg = 'Qt bindings "%s" is not supported' % qt_api

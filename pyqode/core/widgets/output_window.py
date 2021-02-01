@@ -17,7 +17,10 @@ from pyqode.core.api.client import PROCESS_ERROR_STRING
 from pyqode.core.backend import server
 from pyqode.qt import QtWidgets, QtGui, QtCore
 from pyqode.qt.QtGui import QColor
-from pyqode.qt.QtWidgets import qApp
+try:
+    from pyqode.qt.QtWidgets import qApp
+except ImportError:
+    from pyqode.qt.QtWidgets import QApplication as qApp
 
 from . import pty_wrapper
 
@@ -441,7 +444,7 @@ class _LinkHighlighter(SyntaxHighlighter):
             if match:
                 start, end = match.span('url')
                 fmt = QtGui.QTextCharFormat()
-                fmt.setForeground(QtWidgets.qApp.palette().highlight().color())
+                fmt.setForeground(qApp.palette().highlight().color())
                 fmt.setUnderlineStyle(fmt.SingleUnderline)
                 self.setFormat(start, end - start, fmt)
 
@@ -526,8 +529,8 @@ class AnsiEscapeCodeParser(object):
 
     def __init__(self):
         fmt = QtGui.QTextCharFormat()
-        fmt.setForeground(QtWidgets.qApp.palette().text().color())
-        fmt.setBackground(QtWidgets.qApp.palette().base().color())
+        fmt.setForeground(qApp.palette().text().color())
+        fmt.setBackground(qApp.palette().base().color())
         FormattedText.__new__.__defaults__ = '', fmt
         self._prev_fmt_closed = True
         self._prev_fmt = fmt

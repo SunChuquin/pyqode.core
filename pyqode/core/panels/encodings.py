@@ -141,6 +141,9 @@ class EncodingPanel(Panel):
         # Delay because the editor might not have been shown yet
         QtCore.QTimer.singleShot(1, self.show)
 
+    def on_save_failed(self, path, encoding):
+        pass
+
     def show(self):
         super(EncodingPanel, self).show()
         self.editor.selectAll()
@@ -213,6 +216,9 @@ if __name__ == '__main__':
         pnl.on_open_failed(__file__, locale.getpreferredencoding())
 
     def simulate_save():
+        # pass
+        # print(pnl)
+        # print(pnl.on_save_failed)
         pnl.on_save_failed(__file__, locale.getpreferredencoding())
 
     app = QtWidgets.QApplication(sys.argv)

@@ -2,6 +2,9 @@
 Show the use of the ErrorsTable widget.
 """
 import sys
+import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 from pyqode.qt import QtWidgets
 from pyqode.core.modes import CheckerMessage, CheckerMessages
 from pyqode.core.widgets import ErrorsTable

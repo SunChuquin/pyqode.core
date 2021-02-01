@@ -15,9 +15,9 @@ chardet by running the following commmand::
 
 """
 import sys
+from common import setup_editor, get_file_path
 from pyqode.qt import QtWidgets
 from pyqode.core import api, panels, widgets
-from common import setup_editor, get_file_path
 import chardet
 
 pth = get_file_path()

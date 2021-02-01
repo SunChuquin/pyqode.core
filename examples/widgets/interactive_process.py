@@ -3,6 +3,9 @@ Simple interactive process used to demonstrate the use of the
 InteractiveConsole widget.
 """
 import sys
+import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 print('running an interactive process')
 
 

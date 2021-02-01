@@ -5,6 +5,9 @@ the error found in the document).
 import logging
 logging.basicConfig(level=logging.DEBUG)
 import sys
+import os
+os.environ['QT_API'] = 'pyside2'
+# os.environ['QT_API'] = 'pyqt5'
 
 from pyqode.qt import QtWidgets
 from pyqode.core.api import CodeEdit
